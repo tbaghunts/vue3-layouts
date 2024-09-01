@@ -1,0 +1,46 @@
+{
+  "name": "vue3-layouts",
+  "version": "1.0.0",
+  "description": "Simplifying the process of creating and managing layouts in Vue.js projects with pre-built, customizable components designed for responsive design and quick integration.",
+  "type": "module",
+  "main": "src/index",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "type:check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false"
+  },
+  "keywords": [
+    "vue",
+    "layouts",
+    "router"
+  ],
+  "author": {
+    "name": "Baghunts",
+    "url": "https://baghunts.com",
+    "email": "tatul.baghunts@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@types/node": "^22.5.2",
+    "@vitejs/plugin-vue": "^5.1.3",
+    "@vitest/ui": "^2.0.5",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "@vue/tsconfig": "^0.5.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-promise": "^7.1.0",
+    "eslint-plugin-vue": "^9.27.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.3.0",
+    "vite": "^5.4.2",
+    "vitest": "^2.0.5",
+    "vue-tsc": "^2.1.4"
+  },
+  "dependencies": {
+    "vue": "^3.4.38",
+    "vue-router": "^4.4.3"
+  }
+}

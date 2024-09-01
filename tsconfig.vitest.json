@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.app.json",
+  "exclude": [],
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2022",
+    "module": "ESNext",
+    "experimentalDecorators": true,
+    "lib": ["DOM", "ESNext", "ScriptHost", "DOM.Iterable"],
+    "composite": true,
+    "types": ["node"]
+  }
+}

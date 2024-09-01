@@ -1,0 +1,17 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": ["vite.config.ts", "vitest.config.ts", "./src/**/*.ts", "./src/**/*.vue"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "composite": true,
+    "target": "ES2023",
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "experimentalDecorators": true,
+    "lib": ["DOM", "ESNext", "ScriptHost", "DOM.Iterable"],
+    "paths": {
+      "@": ["./src/*"],
+    }
+  }
+}
