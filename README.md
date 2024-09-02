@@ -46,6 +46,7 @@ const routes = [
   {
     path: '/',
     component: Home,
+    // Will be used default layout
   },
   {
     path: '/sing',
@@ -55,10 +56,12 @@ const routes = [
       {
         path: '/in',
         component: () => import('./pages/sign-in'),
+        // Will be used parent layout
       },
       {
         path: '/up',
         component: () => import('./pages/sign-up'),
+        // Will be used parent layout
       }
     ]
   },
@@ -79,7 +82,8 @@ app.use(router);
 
 ### Add LayoutsProvider in Your Entry Point
 
-Ensure you include the LayoutsProvider component in your application’s entry point (e.g., main.ts).
+Ensure you include the LayoutsProvider component in your application’s entry point (e.g., App.vue).\
+`LayoutsProvider` is the global registered component, and you do not need to import it before using it.
 
 ```vue
 <template>
@@ -87,10 +91,6 @@ Ensure you include the LayoutsProvider component in your application’s entry p
     <RouterView />
   </LayoutsProvider>
 </template>
-
-<script lang="ts" setup>
-import { LayoutsProvider } from 'vue3-layouts';
-</script>
 ```
 
 Contributions are welcome! Please feel free to open issues, submit pull requests, or suggest improvements.
