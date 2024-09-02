@@ -3,5 +3,5 @@ import type { LayoutsProviderOptions } from "../package/model";
 
 export default {
   aliases: LayoutConfig,
-  default: "default",
+  default: "LayoutDefault",
 } as LayoutsProviderOptions;
