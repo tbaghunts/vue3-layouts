@@ -10,7 +10,6 @@ export default defineConfig({
       provider: "v8",
       include: ["src/package/**"],
       reporter: ["text", "cobertura"],
-      reportsDirectory: "./tests/unit/coverage",
     },
   },
   resolve: {
