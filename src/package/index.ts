@@ -1,7 +1,7 @@
 import type { App, ObjectPlugin } from "vue";
 
 import { LayoutsProvider } from "./ui";
-import { useLayoutsProvider } from "./model";
+import { createProvider } from "./model";
 import type { LayoutsProviderOptions } from "./model";
 
 export function createLayoutsProvider(
@@ -9,7 +9,7 @@ export function createLayoutsProvider(
 ): ObjectPlugin {
   return {
     install: (app: App) => {
-      const provider = useLayoutsProvider(config);
+      const provider = createProvider(config);
 
       app.provide("baghunts:provider:layout", provider);
       app.config.globalProperties.$layoutsProvider = provider;

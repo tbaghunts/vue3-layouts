@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import { PageA, PageB, PageC, PageHome } from "./pages";
-import TwoSidebarLayout from "./layouts/TwoSidebarLayout.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -28,13 +27,13 @@ const router = createRouter({
       path: "/two-sidebar",
       component: PageC,
       meta: {
-        layout: TwoSidebarLayout,
+        layout: "TwoSidebarLayout",
       },
     },
     {
       path: "/grouped",
       meta: {
-        layout: () => import("./layouts/TwoSidebarLayout.vue"),
+        layout: "TwoSidebarLayout",
       },
       children: [
         {
@@ -45,11 +44,11 @@ const router = createRouter({
           path: "right-sidebar",
           component: () => import("./pages/GroupedPageB.vue"),
           meta: {
-            layout: 'RightSidebarLayout',
-          }
-        }
-      ]
-    }
+            layout: "RightSidebarLayout",
+          },
+        },
+      ],
+    },
   ],
 });
 

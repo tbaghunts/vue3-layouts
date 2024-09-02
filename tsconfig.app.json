@@ -11,7 +11,7 @@
     "experimentalDecorators": true,
     "lib": ["DOM", "ESNext", "ScriptHost", "DOM.Iterable"],
     "paths": {
-      "@": ["./src/*"],
+      "@/*": ["./src/*"],
     }
   }
 }

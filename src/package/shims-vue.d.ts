@@ -1,8 +1,12 @@
+import type { Router, RouteLocationNormalizedLoadedGeneric } from "vue-router";
+
 import type { LayoutComponent, LayoutsProvider } from "./model/types";
 
 declare module "@vue/runtime-core" {
   interface ComponentCustomProperties {
+    $router: Router;
     $layoutsProvider: LayoutsProvider;
+    $route: RouteLocationNormalizedLoadedGeneric;
   }
 
   interface GlobalComponents {
@@ -15,5 +19,3 @@ declare module "vue-router" {
     layout?: LayoutComponent | string;
   }
 }
-
-export {};

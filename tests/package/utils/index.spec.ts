@@ -1,7 +1,11 @@
-import { vi, test, expect } from "vitest";
+import { test, expect } from "vitest";
 
-import * as modelUtils from "@/package/model";
+import * as utilsIndex from "@/package/utils";
 
-test("Model - index should export useful methods", () => {
-  expect(Object.keys(modelUtils)).toContain(["a", "b", "c"]);
+test("Utils - index should export useful methods", () => {
+  expect(Object.keys(utilsIndex)).toEqual([
+    "getComponentByName",
+    "getComponentOrDefault",
+    "evaluateAsyncDefinitionIfInvokable",
+  ]);
 });

@@ -8,6 +8,9 @@
     "experimentalDecorators": true,
     "lib": ["DOM", "ESNext", "ScriptHost", "DOM.Iterable"],
     "composite": true,
-    "types": ["node"]
+    "types": ["node"],
+    "paths": {
+      "@/*": ["./src/*"],
+    }
   }
 }

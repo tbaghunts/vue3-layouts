@@ -1,2 +1,2 @@
-export { useLayoutsProvider } from "./useLayoutsProvider";
-export type { LayoutsProvider, LayoutsProviderOptions } from "./types";
+export { createProvider } from "./createProvider";
+export type { LayoutsProviderInterface, LayoutsProviderOptions } from "./types";

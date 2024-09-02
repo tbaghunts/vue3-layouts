@@ -2,8 +2,8 @@ import type { Component } from "vue";
 
 import type {
   LayoutComponent,
-  LayoutsProvider,
   LayoutsProviderOptions,
+  LayoutsProviderInterface,
 } from "./types";
 
 import {
@@ -12,9 +12,9 @@ import {
   evaluateAsyncDefinitionIfInvokable,
 } from "../utils";
 
-export function useLayoutsProvider(
+export function createProvider(
   config?: LayoutsProviderOptions,
-): LayoutsProvider {
+): LayoutsProviderInterface {
   return {
     getComponent(
       component?: LayoutComponent | string,

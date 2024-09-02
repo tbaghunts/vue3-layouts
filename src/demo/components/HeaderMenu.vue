@@ -29,8 +29,25 @@
               >Two Sidebar</RouterLink
             >
           </li>
+          <li class="nav-item">
+            <RouterLink
+              to="/grouped/right-sidebar"
+              class="nav-link"
+              active-class="active"
+              >Grouped Right Sidebar</RouterLink
+            >
+          </li>
+          <li class="nav-item">
+            <RouterLink
+              to="/grouped/two-sidebar"
+              class="nav-link"
+              active-class="active"
+              >Grouped Two Sidebar</RouterLink
+            >
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 </template>
+<script setup lang="ts"></script>
