@@ -1,6 +1,6 @@
 # vue3-layouts
 
-`vue3-layouts` is a Vue.js package designed to simplify the process of creating and managing layouts in Vue.js projects. It provides pre-built, customizable components to streamline responsive design and quick integration.
+`vue3-layouts` is a Vue.js package designed to simplify the process of creating and managing layouts in Vue.js projects. It provides a configurable Vue.js plugin to set up layouts dependent on Vue Router.
 
 ## Features
 
@@ -39,7 +39,7 @@ createApp(EntryPoint)
 
 ### Define Layouts in Vue Router
 
-Specify the layout for each route in the meta field of your Vue Router configuration.
+Specify the `layout` for each `route` in the `meta` field of your Vue Router configuration.
 
 ```typescript
 const routes = [
