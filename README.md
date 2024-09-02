@@ -1,5 +1,6 @@
 [![npm version](https://badge.fury.io/js/vue3-layouts.svg)](https://badge.fury.io/js/vue3-layouts)
 [![Tests](https://github.com/tbaghunts/vue3-layouts/actions/workflows/node.js.yml/badge.svg)](https://github.com/tbaghunts/vue3-layouts/actions/workflows/node.js.yml)
+[![codecov](https://codecov.io/gh/tbaghunts/vue3-layouts/graph/badge.svg?token=lQHGfn5W7h)](https://codecov.io/gh/tbaghunts/vue3-layouts)
 [![downloads](https://img.shields.io/npm/d18m/vue3-layouts.svg)](https://www.npmjs.com/package/vue3-layouts)
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
