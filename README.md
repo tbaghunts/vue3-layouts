@@ -1,3 +1,8 @@
+[![npm version](https://badge.fury.io/js/vue3-layouts.svg)](https://badge.fury.io/js/vue3-layouts)
+[![Tests](https://github.com/tbaghunts/vue3-layouts/actions/workflows/node.js.yml/badge.svg)](https://github.com/tbaghunts/vue3-layouts/actions/workflows/node.js.yml)
+[![downloads](https://img.shields.io/npm/d18m/vue3-layouts.svg)](https://www.npmjs.com/package/vue3-layouts)
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+
 # vue3-layouts
 
 `vue3-layouts` is a Vue.js package designed to simplify the process of creating and managing layouts in Vue.js projects. It provides a configurable Vue.js plugin to set up layouts dependent on Vue Router.
