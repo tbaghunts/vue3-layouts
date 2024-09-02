@@ -1,7 +1,7 @@
 <template>
   <HeaderMenu />
+  <RouterReport />
   <LayoutsProvider>
-    <RouterReport />
     <RouterView />
   </LayoutsProvider>
 </template>

@@ -4,7 +4,7 @@ export type LayoutComponent = Component | AsyncComponentLoader;
 
 export interface LayoutsProviderOptions {
   default?: LayoutComponent | string;
-  components: Record<string, LayoutComponent>;
+  aliases: Record<string, LayoutComponent>;
 }
 
 export interface LayoutsProvider {
@@ -12,6 +12,7 @@ export interface LayoutsProvider {
     component?: LayoutComponent | string,
     defaultLayout?: LayoutComponent | string,
   ): Component | string;
+  getConfig(): LayoutsProviderOptions | undefined;
 }
 
 export interface LayoutsProviderProps {

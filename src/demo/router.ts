@@ -31,6 +31,25 @@ const router = createRouter({
         layout: TwoSidebarLayout,
       },
     },
+    {
+      path: "/grouped",
+      meta: {
+        layout: () => import("./layouts/TwoSidebarLayout.vue"),
+      },
+      children: [
+        {
+          path: "two-sidebar",
+          component: () => import("./pages/GroupedPageA.vue"),
+        },
+        {
+          path: "right-sidebar",
+          component: () => import("./pages/GroupedPageB.vue"),
+          meta: {
+            layout: 'RightSidebarLayout',
+          }
+        }
+      ]
+    }
   ],
 });
 

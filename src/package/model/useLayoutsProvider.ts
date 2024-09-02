@@ -7,7 +7,7 @@ import type {
   LayoutsProviderOptions,
 } from "./types";
 
-export function createLayoutsProvider(
+export function useLayoutsProvider(
   config?: LayoutsProviderOptions,
 ): LayoutsProvider {
   const getComponentOrDefault = (
@@ -22,8 +22,8 @@ export function createLayoutsProvider(
   };
 
   const getComponentByName = (component?: LayoutComponent | string) => {
-    if (typeof component === "string" && !!config?.components) {
-      component = config.components[component];
+    if (typeof component === "string" && !!config?.aliases) {
+      component = config.aliases[component];
     }
 
     return component;
@@ -50,6 +50,9 @@ export function createLayoutsProvider(
 
       return component ?? "div";
     },
+    getConfig() {
+      return config;
+    }
   };
 }
 

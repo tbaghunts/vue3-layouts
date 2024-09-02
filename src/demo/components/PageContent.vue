@@ -1,48 +1,129 @@
 <template>
-  <h1>What is Lorem Ipsum?</h1>
-  <p>
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the
-    1500s, when an unknown printer took a galley of type and scrambled it to
-    make a type specimen book. It has survived not only five centuries, but also
-    the leap into electronic typesetting, remaining essentially unchanged. It
-    was popularised in the 1960s with the release of Letraset sheets containing
-    Lorem Ipsum passages, and more recently with desktop publishing software
-    like Aldus PageMaker including versions of Lorem Ipsum.
-  </p>
-
-  <h2>Why do we use it?</h2>
-  <p>
-    It is a long established fact that a reader will be distracted by the
-    readable content of a page when looking at its layout. The point of using
-    Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-    opposed to using 'Content here, content here', making it look like readable
-    English. Many desktop publishing packages and web page editors now use Lorem
-    Ipsum as their default model text, and a search for 'lorem ipsum' will
-    uncover many web sites still in their infancy. Various versions have evolved
-    over the years, sometimes by accident, sometimes on purpose (injected humour
-    and the like).
-  </p>
-
-  <h2>Where does it come from?</h2>
-  <p>
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-    roots in a piece of classical Latin literature from 45 BC, making it over
-    2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-    College in Virginia, looked up one of the more obscure Latin words,
-    consectetur, from a Lorem Ipsum passage, and going through the cites of the
-    word in classical literature, discovered the undoubtable source. Lorem Ipsum
-    comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-    (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
-    treatise on the theory of ethics, very popular during the Renaissance. The
-    first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-    in section 1.10.32.
-  </p>
+  <h1>vue3-layouts</h1>
 
   <p>
-    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below
-    for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum
-    et Malorum" by Cicero are also reproduced in their exact original form,
-    accompanied by English versions from the 1914 translation by H. Rackham.
+    `vue3-layouts` is a Vue.js package designed to simplify the process of creating
+    and managing layouts in Vue.js projects. It provides a configurable Vue.js plugin to set up
+    layouts dependent on Vue Router.
   </p>
+
+  <h2>Features</h2>
+  <ul>
+    <li><b>Customizable Layouts</b>: Easily manage and switch between different layouts.</li>
+    <li><b>Quick Integration</b>: Simplify the layout management process with minimal setup.</li>
+  </ul>
+
+  <h2>Installation</h2>
+  <p>You can install `vue3-layouts` via npm:</p>
+
+  <div class="card">
+    <div class="card-body">
+      npm install vue3-layouts
+    </div>
+  </div>
+
+  <hr />
+
+  <h3>Import and Setup</h3>
+  <p>
+    Import createLayoutsProvider from vue3-layouts and set it up in your Vue application. You will need to provide the default layout and any other layout aliases.
+  </p>
+
+  <div class="card">
+    <div class="card-body">
+      <pre>
+        <code>
+          import { createLayoutsProvider } from "vue3-layouts";
+
+          import EntryPoint from "./EntryPoint.vue";
+
+          const layoutsProvider = createLayoutsProvider({
+            default: () => import('./layouts/DefaultLayout.vue'),
+            aliases: {
+              guest: () => import('./layouts/GuestLayout.vue'),
+              authenticated: () => import('./layouts/AuthenticatedLayout.vue')
+            }
+          });
+
+          createApp(EntryPoint)
+            .use(layoutsProvider)
+            .mount('#app')
+        </code>
+      </pre>
+    </div>
+  </div>
+
+  <hr />
+
+  <h3>Define Layouts in Vue Router</h3>
+  <p>Specify the `layout` for each `route` in the `meta` field of your Vue Router configuration.</p>
+
+  <div class="card">
+    <div class="card-body">
+      <pre>
+        <code>
+          const routes = [
+            {
+              path: '/',
+              component: Home,
+            },
+            {
+              path: '/sing',
+              component: OtherPage,
+              meta: { layout: 'guest' },
+              children: [
+                {
+                path: '/in',
+                component: () => import('./pages/sign-in'),
+                },
+                {
+                path: '/up',
+                component: () => import('./pages/sign-up'),
+                }
+              ]
+            },
+            {
+              path: '/dashboard',
+              meta: { layout: 'authenticated' },
+              component: () => import('./pages/dashboard'),
+            }
+          ];
+
+          const router = createRouter({
+            history: createWebHistory(),
+            routes
+          });
+
+          app.use(router);
+        </code>
+      </pre>
+    </div>
+  </div>
+
+  <hr />
+
+  <h3>Add LayoutsProvider in Your Entry Point</h3>
+  <p>
+    Ensure you include the LayoutsProvider component in your application’s entry point (e.g., App.vue).
+  </p>
+
+  <div class="card">
+    <div class="card-body">
+      <pre>
+        <code>
+          &lt;template>
+            &lt;LayoutsProvider&gt;
+              &lt;RouterView /&gt;
+            &lt;/LayoutsProvider&gt;
+          &lt;/template&gt;
+
+          &lt;script lang="ts" setup&gt;
+          import { LayoutsProvider } from 'vue3-layouts';
+          &lt;/script&gt;
+        </code>
+      </pre>
+    </div>
+  </div>
+
+  <i>Contributions are welcome! Please feel free to open issues, submit pull requests, or suggest improvements.</i>
 </template>

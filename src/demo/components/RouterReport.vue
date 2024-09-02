@@ -1,17 +1,15 @@
 <template>
   <div class="container">
     <div class="row">
-      <div>
+      <div class="col-6">
         <h4>Router</h4>
         <pre>
-          <code>{{ $route }}</code>
+          <code>{{ $route.meta }}</code>
         </pre>
       </div>
-      <div>
+      <div class="col-6">
         <h4>Layouts provider</h4>
-        <pre>
-          <code>{{ $layoutsProvider }}</code>
-        </pre>
+          <code>{{ $layoutsProvider.getConfig() }}</code>
       </div>
     </div>
   </div>
