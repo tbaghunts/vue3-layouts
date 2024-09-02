@@ -27,4 +27,15 @@ jobs:
       - run: npm run build --if-present
       - run: npm run test:unit
       - run: npm run test:coverage
-      - run: codecov/codecov-action@v4
+
+      - name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          verbose: true
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: true
+          files: tests/unit/coverage/cobertura-coverage.xml
+          token: ${{ secrets.CODECOV_TOKEN }}
+        env:
+            CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
