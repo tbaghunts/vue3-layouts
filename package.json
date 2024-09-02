@@ -1,6 +1,6 @@
 {
   "name": "vue3-layouts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simplifying the process of creating and managing layouts in Vue.js projects with pre-built, customizable components designed for responsive design and quick integration.",
   "type": "module",
   "main": "src/index",
