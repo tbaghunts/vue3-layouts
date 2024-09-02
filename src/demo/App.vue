@@ -1,8 +1,11 @@
 <template>
   <HeaderMenu />
-  <BaghuntsLayoutProvider />
+  <LayoutsProvider>
+    <RouterReport />
+    <RouterView />
+  </LayoutsProvider>
 </template>
 
 <script setup lang="ts">
-import { HeaderMenu } from "./components";
+import { HeaderMenu, RouterReport } from "./components";
 </script>

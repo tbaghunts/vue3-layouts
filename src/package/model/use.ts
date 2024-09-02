@@ -1,8 +1,8 @@
 import { inject, hasInjectionContext } from "vue";
 
-import type { BaghuntsLayoutProvider } from "./types";
+import type { LayoutsProvider } from "./types";
 
-export function useBaghuntsLayoutProvider(): BaghuntsLayoutProvider {
+export function useLayoutsProvider(): LayoutsProvider {
   if (!hasInjectionContext()) {
     throw Error(
       "Layout Provider Context can only be accessed within a Component’s Context",

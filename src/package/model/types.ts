@@ -1,19 +1,19 @@
 import type { AsyncComponentLoader, Component } from "vue";
 
-export type BaghuntsLayoutComponent = Component | AsyncComponentLoader;
+export type LayoutComponent = Component | AsyncComponentLoader;
 
-export interface BaghuntsLayoutPluginOptions {
-  default?: BaghuntsLayoutComponent | string;
-  components: Record<string, BaghuntsLayoutComponent>;
+export interface LayoutsProviderOptions {
+  default?: LayoutComponent | string;
+  components: Record<string, LayoutComponent>;
 }
 
-export interface BaghuntsLayoutProvider {
+export interface LayoutsProvider {
   getComponent(
-    component?: BaghuntsLayoutComponent | string,
-    defaultLayout?: BaghuntsLayoutComponent | string,
+    component?: LayoutComponent | string,
+    defaultLayout?: LayoutComponent | string,
   ): Component | string;
 }
 
-export interface BaghuntsLayoutProviderProps {
-  default?: BaghuntsLayoutComponent | string;
+export interface LayoutsProviderProps {
+  default?: LayoutComponent | string;
 }

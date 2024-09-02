@@ -1,1 +1,1 @@
-export { default as BaghuntsLayoutProvider } from "./BaghuntsLayoutProvider.vue";
+export { default as LayoutsProvider } from "./LayoutsProvider.vue";

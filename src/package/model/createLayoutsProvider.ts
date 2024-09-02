@@ -2,17 +2,17 @@ import { defineAsyncComponent } from "vue";
 import type { AsyncComponentLoader, Component } from "vue";
 
 import type {
-  BaghuntsLayoutProvider,
-  BaghuntsLayoutComponent,
-  BaghuntsLayoutPluginOptions,
+  LayoutComponent,
+  LayoutsProvider,
+  LayoutsProviderOptions,
 } from "./types";
 
-export function createBaghuntsLayoutProvider(
-  config?: BaghuntsLayoutPluginOptions,
-): BaghuntsLayoutProvider {
+export function createLayoutsProvider(
+  config?: LayoutsProviderOptions,
+): LayoutsProvider {
   const getComponentOrDefault = (
-    component?: BaghuntsLayoutComponent | string,
-    defaultLayout?: BaghuntsLayoutComponent | string,
+    component?: LayoutComponent | string,
+    defaultLayout?: LayoutComponent | string,
   ) => {
     if (!component && !!config?.default) {
       component = defaultLayout ?? config.default;
@@ -21,7 +21,7 @@ export function createBaghuntsLayoutProvider(
     return component;
   };
 
-  const getComponentByName = (component?: BaghuntsLayoutComponent | string) => {
+  const getComponentByName = (component?: LayoutComponent | string) => {
     if (typeof component === "string" && !!config?.components) {
       component = config.components[component];
     }
@@ -30,7 +30,7 @@ export function createBaghuntsLayoutProvider(
   };
 
   const evaluateAsyncDefinitionIfInvokable = (
-    component?: BaghuntsLayoutComponent | string,
+    component?: LayoutComponent | string,
   ) => {
     if (isAsyncComponent(component)) {
       component = defineAsyncComponent(component);
@@ -41,8 +41,8 @@ export function createBaghuntsLayoutProvider(
 
   return {
     getComponent(
-      component?: BaghuntsLayoutComponent | string,
-      defaultLayout?: BaghuntsLayoutComponent | string,
+      component?: LayoutComponent | string,
+      defaultLayout?: LayoutComponent | string,
     ): Component | string {
       component = getComponentOrDefault(component, defaultLayout);
       component = getComponentByName(component);
@@ -54,7 +54,7 @@ export function createBaghuntsLayoutProvider(
 }
 
 function isAsyncComponent(
-  component?: BaghuntsLayoutComponent | string,
+  component?: LayoutComponent | string,
 ): component is AsyncComponentLoader {
   return typeof component === "function";
 }

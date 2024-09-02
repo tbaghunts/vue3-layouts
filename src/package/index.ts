@@ -1,22 +1,19 @@
 import type { App, ObjectPlugin } from "vue";
 
-import { BaghuntsLayoutProvider } from "./ui";
-import {
-  createBaghuntsLayoutProvider,
-  type BaghuntsLayoutPluginOptions,
-} from "./model";
+import { LayoutsProvider } from "./ui";
+import { createLayoutsProvider, type LayoutsProviderOptions } from "./model";
 
 export function createBaghuntsLayout(
-  config?: BaghuntsLayoutPluginOptions,
+  config?: LayoutsProviderOptions,
 ): ObjectPlugin {
   return {
     install: (app: App) => {
-      const provider = createBaghuntsLayoutProvider(config);
+      const provider = createLayoutsProvider(config);
 
       app.provide("baghunts:provider:layout", provider);
-      app.config.globalProperties.$baghuntsBaghuntsLayoutProvider = provider;
+      app.config.globalProperties.$baghuntsLayoutsProvider = provider;
 
-      app.component("BaghuntsLayoutProvider", BaghuntsLayoutProvider);
+      app.component("LayoutsProvider", LayoutsProvider);
     },
   };
 }
