@@ -1,15 +1,16 @@
 {
   "name": "vue3-layouts",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simplifying the process of creating and managing layouts in Vue.js projects with pre-built, customizable components designed for responsive design and quick integration.",
   "type": "module",
   "main": "src/index",
+  "types": "src/package/autoload.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
+    "type:check": "vue-tsc -p tsconfig.app.json",
     "test:unit": "vitest --environment jsdom --ui --open",
     "test:coverage": "vitest run --environment jsdom --coverage",
-    "type:check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint:check": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore"
   },
   "keywords": [

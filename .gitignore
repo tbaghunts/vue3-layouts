@@ -31,3 +31,6 @@ dist-ssr
 # tools
 .eslintrc*
 .prettier*
+
+# typescript
+*.tsbuildinfo
